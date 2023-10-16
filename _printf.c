@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+	if (format == NULL || format[1] == '\0'))
 		return (-1);
 
 Here:
@@ -32,6 +32,11 @@ Here:
 				len = len + m[j].f(args);
 				i = i + 2;
 				goto Here;
+			}
+			if (format[i] == '%' && format[i + 1] == '%')
+			{
+				_putchar('%');
+				return (1);
 			}
 			j--;
 		}
