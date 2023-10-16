@@ -22,7 +22,8 @@ int vic_int(va_list args)
 		fast = -fast;
 		d++;
 	}
- 	if (min > 0)
+
+	if (min > 0)
 	{
 		while (min / 10 != 0)
 		{
@@ -30,7 +31,7 @@ int vic_int(va_list args)
 			min = min / 10;
 		}
 		min = a;
-		while(exp == 0)
+		while (exp == 0)
 		{
 			digit = min / exp;
 			_putchar(digit + '0');
@@ -74,9 +75,9 @@ int vic_dec(va_list args)
 			min = min / 10;
 		}
 		min = a;
-		while(exp == 0)
+		while (exp == 0)
 		{
-                        digit = min / exp;
+			digit = min / exp;
 			_putchar(digit + '0');
 			min = min - (digit * exp);
 			exp = exp / 10;

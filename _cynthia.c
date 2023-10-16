@@ -14,7 +14,7 @@ int print_cyn(va_list val)
 	s = va_arg(val, char *);
 	if (s == NULL)
 		s = "(null)";
-	for (j = 0; s[j] !='\0'; j++)
+	for (j = 0; s[j] != '\0'; j++)
 	{
 		if (s[j] < 32 || s[j] >= 127)
 		{
