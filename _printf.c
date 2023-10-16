@@ -9,7 +9,7 @@
 int _printf(const char *format, ...)
 {
 	match m[] = {
-	{"%c", customp_char}, {"%s", customp_string}, {"%%", custom_percent}, {"%d", vic_dec}, {"%i", vic_int}, {"%r", print_revs}, {"%R", print_rot13}, {"%b", mum_bin}, {"%u", vic_unsigned}, {"%o", mum_octal}, {"%x", dad_mex}, {"%X", print_Hex}, {"%s", print_Hex}, {"%p", myini_pointer}
+	{"c", customp_char}, {"s", customp_string}, {"%", custom_percent}, {"d", vic_dec}, {"i", vic_int}, {"r", print_revs}, {"R", print_rot13}, {"b", mum_bin}, {"u", vic_unsigned}, {"o", mum_octal}, {"x", dad_mex}, {"X", print_Hex}, {"p", myini_pointer}
 	};
 
 	va_list args;
@@ -21,17 +21,16 @@ int _printf(const char *format, ...)
 	if (format == NULL)
 		return (-1);
 
-Here:
 	while (format[i] != '\0')
 {
-		j = 13;
+		j = 12;
 		while (j >= 0)
 		{
-			if (m[j].id[0] == format[i] && m[j].id[1] == format[i + 1])
+			if ('%' == format[i] && m[j].id[0] == format[i + 1])
 			{
 				len = len + m[j].f(args);
-				i = i + 2;
-				goto Here;
+				i = i + 1;
+				continue;
 			}
 		
 			j--;
