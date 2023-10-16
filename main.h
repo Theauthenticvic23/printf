@@ -1,26 +1,39 @@
-
 #ifndef MAIN_H
 #define MAIN_H
-#include <stdarg.h>
-#include <unistd.h>
 #include <stdlib.h>
-#define BUFFER_SIZE 20
-#define BUFFER _SIZE 1024
-#define OUTPUT_BUFFER_SIZE 1024
+#include <stdio.h>
+#include <stdarg.h>
+#include <limits.h>
+
 /**
- * Struct FormatPair - Represents a format and its associated function.
+ * struct format - represents a format and its association
  */
-typedef struct {
-    char format;
-    int (*function)(va_list, char[], int, int, int, int);
-} FormatPair;
-int _custom_putchar(char ch);
+
+typedef struct format
+{
+	char *id;
+	int (*f)();
+} match;
+
 int _printf(const char *format, ...);
-void write_output(char output[], int *output_index);
-int get_custom_flags(const char *format, int *index);
-int get_custom_width(const char *format, int *index, va_list args);
-int get_custom_precision(const char *format, int *index, va_list args);
-int get_custom_size(const char *format, int *index);
-int handle_custom_print(const char *format, int *index, va_list args, char output[], int flags, int width, int precision, int size);
+int customp_char(va_list val);
+int _putchar(char c);
+int _strlen(char *str);
+int customp_string(va_list val);
+int _strlenk(const char *str);
+int custom_percent(void);
+int vic_int(va_list args);
+int vic_dec(va_list args);
+int vic_unsigned(va_list args);
+int mum_bin(va_list val);
+int myini_pointer(va_list val);
+int mum_octal(va_list val);
+int dad_mex(va_list val);
+int print_Hex(va_list val);
+int print_extra(unsigned int min);
+int myini_pointer(va_list val);
+int vic_hex(unsigned long int min);
+int print_revs(va_list val);
+int print_rot13(va_list val);
 
 #endif

@@ -1,13 +1,14 @@
+#include <unistd.h>
 #include <stdio.h>
-
 /**
- * _custom_putchar - custom character output function for stdout.
- * @ch: The character to be written.
+ * _putchar - writes the char
  *
- * Return: On success, the character written is returned.
- * On error, EOF is returned.
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is integer
  */
-int _custom_putchar(char ch)
+int _putchar(char c)
 {
-    return putchar(ch);
+	return (write(1, &c, 1));
 }
