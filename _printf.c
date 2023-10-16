@@ -18,12 +18,14 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	if (format == NULL || format ==  '\0')
+	if (format == NULL)
 		return (-1);
 
 Here:
 	while (format[i] != '\0')
 	{
+		if (format[i] == '\0')
+			return (-1);
 		j = 13;
 		while (j >= 0)
 		{
