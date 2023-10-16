@@ -32,11 +32,10 @@ Here:
 				len = len + m[j].f(args);
 				i = i + 2;
 				goto Here;
-			}
-			if (format[i] == '%' && format[i + 1] == '%')
+			} else if (format[i] == '%' && format[i + 1] == '%')
 			{
 				_putchar('%');
-				return (1);
+				len++;
 			}
 			j--;
 		}
