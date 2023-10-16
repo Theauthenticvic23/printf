@@ -12,7 +12,7 @@
 typedef struct format
 {
 	char *id;
-	int (*f)();
+	int (*f)(va_list);
 } match;
 
 int _printf(const char *format, ...);
