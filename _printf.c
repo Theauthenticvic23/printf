@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 				num_f = sizeof(m) / sizeof(m[0]);
 				for (j = 0; j < num_f; j++)
 				{
-					if (formart[i] == m[j].id)
+					if (format[i] == m[j].id)
 					{
 						len = m[j].f(args);
 						i++;
