@@ -16,7 +16,7 @@ int customp_string(va_list val)
 	if (str == NULL)
 	{
 		str = "(null)";
-		len = strlen(str);
+		len = _strlen(str);
 		for (y = 0; y < len ; y++)
 			_putchar(str[y]);
 		return (len);
