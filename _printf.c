@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	};
 
 	va_list args;
-	int i = 0, len = 0;
+	int i = 0, len = 0, num_f;
 	int j;
 
 	va_start(args, format);
@@ -22,18 +22,27 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	while (format[i] != '\0')
-{
-		j = 12;
-		while (j >= 0)
-		{
-			if ('%' == format[i] && m[j].id[0] == format[i + 1])
+	{
+		
+			if ('%' == format[i])
 			{
-				len = len + m[j].f(args);
-				i = i + 1;
-				continue;
+				i++;
+				if (format[i] == '\0')
+					return (-1);
+				num_f = sizeof(m) / sizeof(m[0]);
+				for (j = 0; j < num_f; j++)
+				{
+					if (formart[i] == m[j].id)
+					{
+						len = m[j].f(args);
+						i++;
+						j++;
+						continue;
+					}
+				}
 			}
 		
-			j--;
+	
 		}
 
 			_putchar(format[i]);
