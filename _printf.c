@@ -38,9 +38,12 @@ Here:
 		
 			j--;
 		}
-		_putchar(format[i]);
-		i++;
-		len++;
+		if (format[i] != '%')
+		{
+			_putchar(format[i]);
+			i++;
+			len++;
+		}
 	}
 	va_end(args);
 	return (len);
