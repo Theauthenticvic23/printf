@@ -23,9 +23,7 @@ int _printf(const char *format, ...)
 
 Here:
 	while (format[i] != '\0')
-	{
-		if (format[i] == '\0')
-			return (-1);
+{
 		j = 13;
 		while (j >= 0)
 		{
@@ -38,12 +36,10 @@ Here:
 		
 			j--;
 		}
-		if (format[i] != '%')
-		{
+
 			_putchar(format[i]);
 			i++;
 			len++;
-		}
 	}
 	va_end(args);
 	return (len);
