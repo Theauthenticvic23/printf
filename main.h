@@ -13,7 +13,7 @@
 
 typedef struct format
 {
-	char *id;
+	char id;
 	int (*f)();
 } match;
 
