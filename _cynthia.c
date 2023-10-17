@@ -11,13 +11,13 @@ int c_buffer(char t)
 	static char buff[1024];
 	static int j;
 
-	if (t == -2 || j == 1024)
+	if (t == -1 || j == 1024)
 	{
 		write(1, buff, j);
 		j = 0;
 	}
 
-	if (t != -2)
+	if (t != -1)
 		buffering[i++] = t;
 
 	return (1);
