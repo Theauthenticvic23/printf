@@ -31,7 +31,7 @@ int flag_handler(const char *s, va_list args, int *i)
 	}
 	_putchar('%'), _putchar(s[*i]);
 
-	return (1);
+	return (2);
 }
 
 /**
@@ -42,7 +42,6 @@ int flag_handler(const char *s, va_list args, int *i)
 
 int _printf(const char *format, ...)
 {
-	
 
 	va_list args;
 	int i = 0, len = 0, cyn;
@@ -52,7 +51,7 @@ int _printf(const char *format, ...)
 	if (format == NULL)
 		return (-1);
 
-	while (format[i] != '\0')
+	for (; format[i] != '\0'; i++)
 	{
 		
 			if ('%' == format[i])
@@ -70,7 +69,7 @@ int _printf(const char *format, ...)
 				c_buffer(format[i]);
 /*			_putchar(format[i]);*/
 			}
-		i++;
+
 		len++;
 	}
 	c_buffer(-1);
