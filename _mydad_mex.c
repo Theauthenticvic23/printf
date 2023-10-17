@@ -11,11 +11,9 @@ int dad_mex(va_list val)
 	int jump;
 	char *cynstr;
 
-	cynstr = itao(va_arg(args, unsigned int), 16);
+	cynstr = itao(va_arg(val, unsigned int), 16);
 
-	s = cynputs((cynstr != NULL) ? cynstr : "NULL");
-
-	return (s);
+	jump = cynputs((cynstr != NULL) ? cynstr : "NULL");
 
 	return (jump);
 }
