@@ -26,6 +26,7 @@ int _printf(const char *format, ...)
 		
 			if ('%' == format[i])
 			{
+				c_buffer(-2);
 				i++;
 				if (format[i] == '\0')
 					return (-1);
@@ -44,11 +45,12 @@ int _printf(const char *format, ...)
 		
 	
 		}
-
-			_putchar(format[i]);
+	c_buffer(format[i]);
+/*			_putchar(format[i]);*/
 			i++;
 			len++;
 	}
+c_buffer(-2);
 	va_end(args);
 	return (len);
 }
