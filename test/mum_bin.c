@@ -25,7 +25,7 @@ int mum_bin(va_list val)
 					_putchar(b + 48);
 					flag++;
 				}
-				
+
 	}
 	if (flag == 0)
 	{
