@@ -20,7 +20,7 @@ int vic_int(va_list args)
 		min = -min;
 		a = -a;
 		fast = -fast;
-		d++;
+/*		d++;*/
 	}
 
 	if (min > 0)
@@ -37,7 +37,7 @@ int vic_int(va_list args)
 			_putchar(digit + '0');
 			min = min - (digit * exp);
 			exp = exp / 10;
-			d++;
+/*			d++;*/
 		}
 	}
 	_putchar(fast + '0');
