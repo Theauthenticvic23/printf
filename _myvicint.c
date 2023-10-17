@@ -75,38 +75,10 @@ int vic_int(va_list args)
 
 int vic_dec(va_list args)
 {
-	int a = va_arg(args, int);
-	int min, fast = a % 10, digit, exp = 1;
-	int d = 1;
+	char *num_cyn;
+	int lencyn;
 
-	a = a / 10;
-	min = a;
-
-	if (fast < 0)
-	{
-		_putchar('-');
-		min = -min;
-		a = -a;
-		fast = -fast;
-		d++;
-	}
-	if (min > 0)
-	{
-		while (min / 10 != 0)
-		{
-			exp = exp * 10;
-			min = min / 10;
-		}
-		min = a;
-		while (exp == 0)
-		{
-			digit = min / exp;
-			_putchar(digit + '0');
-			min = min - (digit * exp);
-			exp = exp / 10;
-			d++;
-		}
-	}
-	_putchar(fast + '0');
-	return (d);
+	num_cyn = itao(va_arg(args, int), 10);
+	lencyn = cynputs((num_cyn != NULL) ? num_cyn : "NULL");
+	return (lencyn);
 }
