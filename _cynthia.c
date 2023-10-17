@@ -1,4 +1,28 @@
 #include "main.h"
+
+/**
+ * c_buffer - Save the character in a buffer
+ * @t: Character
+ * Return: 1
+ **/
+
+int c_buffer(char t)
+{
+	static char buff[1024];
+	static int j;
+
+	if (t == -2 || j == 1024)
+	{
+		write(1, buff, j);
+		j = 0;
+	}
+
+	if (t != -2)
+		buffering[i++] = t;
+
+	return (1);
+}
+
 /**
  * print_cyn - string
  * @val: args
