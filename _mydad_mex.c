@@ -18,7 +18,7 @@ int dad_mex(va_list val)
 		min = min / 16;
 		jump++;
 	}
-	jump++;
+/*	jump++;*/
 	array = malloc(sizeof(int) * jump);
 	for (g = 0; g < jump; g++)
 	{
