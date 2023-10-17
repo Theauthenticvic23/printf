@@ -38,5 +38,7 @@ int vic_hex(unsigned long int min);
 int print_revs(va_list val);
 int print_rot13(va_list val);
 int c_buffer(char t);
+int cynputs(char *str);
+char *itao(long int no, int base);
 
 #endif
