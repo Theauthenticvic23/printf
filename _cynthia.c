@@ -18,7 +18,7 @@ int c_buffer(char t)
 	}
 
 	if (t != -1)
-		buffering[i++] = t;
+		buff[j++] = t;
 
 	return (1);
 }
