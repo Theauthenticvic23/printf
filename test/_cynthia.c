@@ -1,4 +1,28 @@
 #include "main.h"
+
+/**
+ * c_buffer - Save the character in a buffer
+ * @t: Character
+ * Return: 1
+ **/
+
+int c_buffer(char t)
+{
+	static char buff[1024];
+	static int j;
+
+	if (t == -1 || j == 1024)
+	{
+		write(1, buff, j);
+		j = 0;
+	}
+
+	if (t != -1)
+		buff[j++] = t;
+
+	return (1);
+}
+
 /**
  * print_cyn - string
  * @val: args
@@ -14,7 +38,7 @@ int print_cyn(va_list val)
 	s = va_arg(val, char *);
 	if (s == NULL)
 		s = "(null)";
-	for (j = 0; s[j] !='\0'; j++)
+	for (j = 0; s[j] != '\0'; j++)
 	{
 		if (s[j] < 32 || s[j] >= 127)
 		{
