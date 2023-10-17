@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 		
 			if ('%' == format[i])
 			{
-				c_buffer(-2);
+				c_buffer(-1);
 				i++;
 				if (format[i] == '\0')
 					return (-1);
@@ -50,7 +50,7 @@ int _printf(const char *format, ...)
 			i++;
 			len++;
 	}
-c_buffer(-2);
+c_buffer(-1);
 	va_end(args);
 	return (len);
 }
