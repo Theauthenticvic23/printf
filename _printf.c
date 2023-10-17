@@ -61,7 +61,6 @@ int _printf(const char *format, ...)
 				if (cyn == -1)
 					return (-1);
 				len += cyn;
-				i++;
 				continue;
 			}
 			else
