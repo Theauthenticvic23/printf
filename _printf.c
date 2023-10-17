@@ -53,8 +53,8 @@ int _printf(const char *format, ...)
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
-
-			if ('%' == format[i])
+		
+		if ('%' == format[i])
 			{
 				c_buffer(-1);
 				cyn = flag_handler(format, args, &i);
