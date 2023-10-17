@@ -16,7 +16,7 @@ int flag_handler(const char *s, va_list args, int *i)
 	{"c", customp_char}, {"s", customp_string}, {"%", custom_percent}, {"d", vic_dec}, {"i", vic_int}, {"r", print_revs}, {"R", print_rot13}, {"b", mum_bin}, {"u", vic_unsigned}, {"o", mum_octal}, {"x", dad_mex}, {"X", print_Hex}, {"p", myini_pointer}
 	};
 
-	*i++;
+	*i += 1;
 	if (s[*i] == '\0')
 		return (-1);
 
@@ -27,11 +27,9 @@ int flag_handler(const char *s, va_list args, int *i)
 		{
 			len = m[j].f(args);
 			return (len);
-			
-			continue;
 		}
 	}
-	_putchar('%'), _putchar(str[*i]);
+	_putchar('%'), _putchar(s[*i]);
 
 	return (2);
 }
