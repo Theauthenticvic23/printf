@@ -46,10 +46,10 @@ int _printf(const char *format, ...)
 	va_list args;
 	int i = 0, len = 0, cyn;
 
-	va_start(args, format);
-
 	if (format == NULL)
 		return (-1);
+
+	va_start(args, format);
 
 	for (; format[i] != '\0'; i++)
 	{
@@ -66,10 +66,10 @@ int _printf(const char *format, ...)
 			else
 			{
 				c_buffer(format[i]);
+				len++;
 /*			_putchar(format[i]);*/
 			}
-
-		len++;
+/*		len++;*/
 	}
 	c_buffer(-1);
 	va_end(args);
