@@ -43,7 +43,7 @@ int vic_int(va_list args)
 	_putchar(fast + '0');
 	return (d);
 }
-#include "main.h"
+
 /**
  * vic_dec - decimal
  * @args: args
