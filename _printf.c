@@ -13,7 +13,7 @@ int flag_handler(const char *s, va_list args, int *i)
 	int len = 0, j, num_f;
 
 	match m[] = {
-	{"c", customp_char}, {"s", customp_string}, {"%", custom_percent}, {"d", vic_dec}, {"i", vic_int}, {"r", print_revs}, {"R", print_rot13}, {"b", mum_bin}, {"u", vic_unsigned}, {"o", mum_octal}, {"x", dad_mex}, {"X", print_Hex}, {"p", myini_pointer}
+	{'c', customp_char}, {'s', customp_string}, {'%', custom_percent}, {'d', vic_dec}, {'i', vic_int}, {'r', print_revs}, {'R', print_rot13}, {'b', mum_bin}, {'u', vic_unsigned}, {'o', mum_octal}, {'x', dad_mex}, {'X', print_Hex}, {'p', myini_pointer}
 	};
 
 	*i += 1;
