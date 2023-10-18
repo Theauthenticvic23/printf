@@ -5,7 +5,7 @@
  * @lim: Array of chars
  * @j: Index at which to add next char, represents the length.
  */
-	
+
 void c_buffer(char lim[], int *j)
 {
 	if (*j > 0)
@@ -19,6 +19,7 @@ void c_buffer(char lim[], int *j)
  * @format: format.
  * Return: Printed chars.
  */
+
 int _printf(const char *format, ...)
 {
 	int i, printed = 0, printed_chars = 0;
@@ -42,7 +43,6 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-/*			_putchar(format[i]);*/
 			c_buffer(lim, &j);
 			flags = cyn_flags(format, &i);
 			width = cyn_width(format, &i, val);
@@ -56,10 +56,7 @@ int _printf(const char *format, ...)
 			printed_chars += printed;
 		}
 	}
-
 	c_buffer(lim, &j);
-
 	va_end(val);
-
 	return (printed_chars);
 }
