@@ -12,15 +12,15 @@
 
 
 /* FLAG OPERATORS AND SPECIALS */
-#define C_MINUS 2
-#define C_PLUS 3
-#define C_ZERO 5
-#define C_HASH 9
-#define C_SPACE 17
+#define C_MINUS 1
+#define C_PLUS 2
+#define C_ZERO 4
+#define C_HASH 8
+#define C_SPACE 16
 
 /* DIFFERENT SIZES  */
-#define C_LONG 1
-#define C_SHORT 2
+#define C_LONG 2
+#define C_SHORT 1
 
 /**
  * struct typ - Struct op
